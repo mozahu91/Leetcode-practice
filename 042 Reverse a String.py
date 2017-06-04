@@ -8,3 +8,12 @@ def reverse(s):
         
 reverse('Zahid')
 'dihaZ'
+
+
+def reverString(s):
+    index = len(s)
+    out = []
+    while index:
+        index-=1
+        out.append(s[index])
+    return ''.join(out) 
