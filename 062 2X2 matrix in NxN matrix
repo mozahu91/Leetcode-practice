@@ -1,0 +1,12 @@
+def twoXtwoMatrix(puzzle):
+    m = len(puzzle)
+    n = len(puzzle[0])
+    res = []
+    for i in range(m-1):
+        for j in range(n-1):
+            a = puzzle[i][j]
+            b = puzzle[i][j+1]
+            c = puzzle[i+1][j]
+            d = puzzle[i+1][j+1]
+            res.append([a,b,c,d])
+    return res
