@@ -5,6 +5,8 @@ This algorithm we will be discussing is Depth-First search which as the name hin
 Mark the current vertex as being visited.
 Explore each adjacent vertex that is not included in the visited set.
 We will assume a simplified version of a graph in the following form:
+
+Pneumonic : pn + npn
 """
 
 graph = {'A': set(['B', 'C']),
