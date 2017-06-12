@@ -42,7 +42,7 @@ dfs(graph, 'A')
  
 
 
-ef dfs_paths(graph, start, goal):
+def dfs_paths(graph, start, goal):
     stack = [(start, [start])]
     while stack:
         (vertex, path) = stack.pop()
