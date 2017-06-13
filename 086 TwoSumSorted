@@ -1,0 +1,22 @@
+"""
+Since the numbers in the array are sorted we need to apply Binary search.
+This is better than the dictinary approach because the complexity reduces to O(logN)
+and it can be done O(1) space
+
+"""
+def twoSum(numbers, target):
+    for i in range(len(numbers)):
+        l, r = i+1, len(numbers)-1
+        tmp = target - numbers[i]
+        while l <= r:
+            mid = l + (r-l)//2
+            if numbers[mid] == tmp:
+                return [numbers[i], numbers[mid]]
+            elif numbers[mid] < tmp:
+                l = mid+1
+            else:
+                r = mid-1
+
+numbers = [1,2,3,4,5]
+target = 9
+print(twoSum(numbers, target))
