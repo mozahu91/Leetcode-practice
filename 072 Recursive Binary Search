@@ -1,0 +1,15 @@
+def rec_binary_Search(arr,ele):
+    if len(arr)==0:
+        return False
+    
+    else:
+        mid = len(arr)//2
+        
+        if arr[mid]==ele:
+            return True
+        
+        else:
+            if ele < arr[mid]:
+                return rec_binary_Search(arr[:mid],ele)
+            else:
+                return rec_binary_Search(arr[mid+1:],ele)
