@@ -7,6 +7,17 @@ Once the two halves are sorted, the fundamental operation, called a merge, is pe
 Merging is the process of taking two smaller sorted lists and combining them together into a single, sorted, new list.
 
 
+
+Class	Sorting algorithm
+Data structure	Array
+Worst-case performance	O(n log n)
+Best-case performance	
+O(n log n) typical,
+
+O(n) natural variant
+Average performance	O(n log n)
+Worst-case space complexity	О(n) total, O(n) auxiliary
+
 """
 
 def mergeSort(arr):
