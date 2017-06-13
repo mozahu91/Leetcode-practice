@@ -1,0 +1,16 @@
+Jugs of Water - SOLUTION
+Problem Statement
+You have a five gallons jug and a three gallons jug, and an unlimited supply of water (but no measuring cups) How would you come up with exactly four gallons of water?
+
+Solution
+This problem has a cameo in the movie Die Hard 3. The solution is below:
+
+
+
+fill 5 gal jug
+fill 3 gal jug with 5 gal jug
+throw all water from 3 gal jug
+fill 3 gal jug with 5 gal jug
+fill 5 gal jug
+fill 3 gal jug with 5 gal jug
+water remaining is 4 gal 
