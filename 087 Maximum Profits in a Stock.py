@@ -26,6 +26,8 @@ That means for every price we will keep track of the lowest price so far and the
 Let's see an implementation of this:
 """
 def profit(stock_prices):
+    if len(stock_prices) < 2:
+        raise Exception('Need at least two stock prices!')
 
     min_stock = stock_prices[0]
     max_profit = 0
