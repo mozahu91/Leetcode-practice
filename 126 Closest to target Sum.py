@@ -30,3 +30,17 @@ sum = 0
 for diff,num in l[:2]:
     sum += num
 print(sum)
+
+
+def twoClosehuh(arr, k):
+    seen = {}
+    for num in arr:
+        target = abs(k-num)
+    
+        if target not in seen:
+            seen[target] = num
+    first2vals = [seen[k] for k in sorted(seen.keys())[:2]]
+    sum =0
+    for i in first2vals:
+        sum +=i
+    return sum
