@@ -1,0 +1,29 @@
+"""
+
+One of the most important problems in BST
+          20
+
+     8        22
+
+ 4      12
+
+     10     14
+8's successot is 10 10's successor is 12 14's successor is 20
+In [171]:
+"""
+def findInOrderAncestor(n):
+    if n.right != None:
+        return findMinKeywithinTree(n.right)
+    
+    ancestor = n.parent
+    child = n
+    
+    while ancestor != None and ancestor.right == child:
+        child = ancestor
+        ancestor = child.parent
+    return ancestor
+
+def findMinKeywithinTree(root):
+    while root.left != None:
+        root = root.left
+    return root
