@@ -1,0 +1,92 @@
+"""
+ 
+Problem: Given a file containing a json of permissions, parse the contents and create a csv with column marked 1 if found in user, 0 if not
+ 
+Example JSON
+{
+    "student1": [
+        "view_grades",
+        "view_classes"
+    ],
+    "student2": [
+        "view_grades",
+        "view_classes"
+    ],
+    "teacher": [
+        "view_grades",
+        "change_grades",
+        "add_grades",
+        "delete_grades",
+        "view_classes"
+    ],
+    "principle": [
+        "view_grades",
+        "view_classes",
+        "change_classes",
+        "add_classes",
+        "delete_classes"
+    ]
+}
+ 
+Example output CSV
+        ,  view_grades, change_grades, add_grades, delete_grades, view_classes, change_classes, add_classes, delete_classes,
+student1,       1,              0,           0,           0,            1,              0,           0,           0,
+student2,       1,              0,           0,           0,            1,              0,           0,           0,
+teacher,        1,              1,           1,           1,            1,              0,           0,           0,
+principle,      1,              0,           0,           0,            1,              1,           1,           1,
+ 
+Bonus point 1: If u can do it in python or PHP
+
+
+
+"""
+
+
+import json
+import csv
+import pandas as pd
+
+school_data = {
+    "student1": [
+        "view_grades",
+        "view_classes"
+    ],
+    "student2": [
+        "view_grades",
+        "view_classes"
+    ],
+    "teacher": [
+        "view_grades",
+        "change_grades",
+        "add_grades",
+        "delete_grades",
+        "view_classes"
+    ],
+    "principle": [
+        "view_grades",
+        "view_classes",
+        "change_classes",
+        "add_classes",
+        "delete_classes"
+    ]
+}
+s1 = json.dumps(school_data)
+school_parsed = json.loads(s1)
+
+headers = []
+index = []
+for i in school_parsed:
+    index.append(i)
+    if school_parsed[i]:
+        for j in school_parsed[i]:
+            if j not in headers:
+                headers.append(j)
+df_ = pd.DataFrame(index=index, columns=headers)
+df_ = df_.fillna(0,)
+row1 = []
+for index, row in df_.iterrows():
+    df_.set_value(index, school_parsed[index], 1,)
+
+print(df_)
+
+df_.to_csv('output.csv', sep=',', encoding='utf-8')
