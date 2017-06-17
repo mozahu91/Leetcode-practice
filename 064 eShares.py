@@ -23,3 +23,10 @@ def min_max(sequence, N):
 
 sequence = [1,2,3,4,5]
 print(min_max(sequence,2))
+
+#It can be solved in a simpler way by slicing:
+
+def min_max(sequence, N):
+    sequence.sort()
+    return (:N, :-N)
+
