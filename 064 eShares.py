@@ -28,5 +28,5 @@ print(min_max(sequence,2))
 
 def min_max(sequence, N):
     sequence.sort()
-    return (:N, :-N)
+    return (sequence[:N], sequence[-N:])
 
