@@ -26,3 +26,5 @@ class Stack():
     
     def getSize(self):
         return len(self.items)
+
+    # hey just checking
