@@ -2,7 +2,7 @@ def rec_coin_dynam(target,coins,known_results):
     '''
     INPUT: This funciton takes in a target amount and a list of possible coins to use.
     It also takes a third parameter, known_results, indicating previously calculated results.
-    The known_results parameter shoud be started with [0] * (target+1)
+    The known_results parameter shoud start with [0] * (target+1)
     
     OUTPUT: Minimum number of coins needed to make the target.
     '''
