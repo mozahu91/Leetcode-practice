@@ -29,3 +29,11 @@ class Solution3:
                 heapq.heappush(heap, (smallest.next.val, smallest.next))
                 
         return dummy.next
+
+    if __name__ == "__main__":
+    list1 = ListNode(1)
+    list1.next = ListNode(3)
+    list2 = ListNode(2)
+    list2.next = ListNode(4)
+    
+    print Solution3().mergeKLists([list1, list2])
