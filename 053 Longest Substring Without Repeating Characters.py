@@ -20,5 +20,6 @@ def longestSubstring(s):
             start = map[s[i]]+1
         else:
             maxlength = max(maxlength, i- start +1)
+        map[s[i]] = i
     
     return maxlength
